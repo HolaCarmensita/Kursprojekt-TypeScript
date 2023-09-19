@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import './App.css';
-import AdminView from './AdminView';
-import UserView from './UserView';
+import AdminView from './components/AdminView';
+import UserView from './components/UserView';
 import { login } from './authService';
 
 const App: React.FC = () => {

@@ -1,11 +1,15 @@
 interface User {
   username: string;
   isAdmin: boolean;
+  bookedGymClasses: {
+    gymClassName: string;
+    date: string; // Eller HTMLDate??? Får se när jag på något sätt skapar bokningsystemet
+  }[];
 }
 
 const users: User[] = [
-  { username: 'admin', isAdmin: true },
-  { username: 'user', isAdmin: false },
+  { username: 'admin', isAdmin: true, bookedGymClasses: [] },
+  { username: 'user', isAdmin: false, bookedGymClasses: [] },
 ];
 
 export function login(username: string, password: string): User | null {

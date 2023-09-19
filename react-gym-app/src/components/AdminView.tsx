@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import UserList from './UserList';
+import gymClassData from '../data/gymClassData';
+import GymClassList from './GymClassList';
 
 interface User {
   username: string;
@@ -7,6 +9,8 @@ interface User {
 }
 
 const AdminView: React.FC = () => {
+  const gymClasses = gymClassData;
+
   const [newUser, setNewUser] = useState<User>({
     username: '',
     isAdmin: false,
@@ -31,6 +35,7 @@ const AdminView: React.FC = () => {
     <div>
       <h1>Welcome, Admin!</h1>
       <UserList users={users} />
+      <GymClassList gymClasses={gymClasses} />
       <h2>Add New User</h2>
       <div>
         <label>

@@ -1,11 +1,12 @@
 import React from 'react';
+import { GymClass } from '../types/gymClassType';
 
-interface GymClass {
-  gymClassName: string;
-  date: string;
-  time: string;
-  trainerName: string;
-}
+// interface GymClass {
+//   gymClassName: string;
+//   date: string;
+//   time: string;
+//   trainerName: string;
+// }
 
 interface GymClassListProps {
   gymClasses: GymClass[];

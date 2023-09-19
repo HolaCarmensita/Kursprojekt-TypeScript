@@ -1,9 +1,11 @@
-export interface GymClass {
-  gymClassName: string;
-  date: string;
-  time: string;
-  trainerName: string;
-}
+import { GymClass } from '../types/gymClassType';
+
+// export interface GymClass {
+//   gymClassName: string;
+//   date: string;
+//   time: string;
+//   trainerName: string;
+// }
 
 const gymClasses: GymClass[] = [
   {

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import UserList from './UserList';
 import usersData from '../data/usersData';
+import { GymClass } from '../types/gymClassType';
 import GymClassList from './GymClassList';
-import gymClassData, { GymClass } from '../data/gymClassData';
+import gymClassData from '../data/gymClassData';
 import GymClassForm from './gymClassForm';
+
 // import gymClassData from '../data/gymClassData';
 
 interface User {

@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import UserList from './UserList';
-import gymClassData from '../data/gymClassData';
+import usersData from '../data/usersData';
 import GymClassList from './GymClassList';
+import gymClassData, { GymClass } from '../data/gymClassData';
+import GymClassForm from './gymClassForm';
+// import gymClassData from '../data/gymClassData';
 
 interface User {
   username: string;
@@ -9,33 +12,27 @@ interface User {
 }
 
 const AdminView: React.FC = () => {
-  const gymClasses = gymClassData;
-
   const [newUser, setNewUser] = useState<User>({
     username: '',
     isAdmin: false,
   });
-  const [users, setUsers] = useState<User[]>([
-    {
-      username: 'admin',
-      isAdmin: true,
-    },
-    {
-      username: 'user',
-      isAdmin: false,
-    },
-  ]);
+  const [users, setUsers] = useState<User[]>(usersData);
+  const [gymClasses, setGymClasses] = useState<GymClass[]>(gymClassData);
 
   const handleAddUser = () => {
     setUsers((prevUsers) => [...prevUsers, newUser]);
     setNewUser({ username: '', isAdmin: false });
   };
 
+  const handleAddGymClass = (newGymClass: GymClass) => {
+    setGymClasses((prevGymClasses) => [...prevGymClasses, newGymClass]);
+  };
+
   return (
     <div>
       <h1>Welcome, Admin!</h1>
       <UserList users={users} />
-      <GymClassList gymClasses={gymClasses} />
+
       <h2>Add New User</h2>
       <div>
         <label>
@@ -62,6 +59,12 @@ const AdminView: React.FC = () => {
         </label>
       </div>
       <button onClick={handleAddUser}>Add User</button>
+
+      {/* Display the GymClassForm component for adding gym classes */}
+      <GymClassForm onAddGymClass={handleAddGymClass} />
+
+      {/* Display the GymClassList component */}
+      <GymClassList gymClasses={gymClasses} />
     </div>
   );
 };

@@ -3,6 +3,7 @@ import React from 'react';
 interface GymClass {
   gymClassName: string;
   date: string;
+  time: string;
   trainerName: string;
 }
 
@@ -17,8 +18,9 @@ const GymClassList: React.FC<GymClassListProps> = ({ gymClasses }) => {
       <ul>
         {gymClasses.map((gymClass, index) => (
           <li key={index}>
-            Gym Class: {gymClass.gymClassName}, Date: {gymClass.date}, Trainer:{' '}
-            {gymClass.trainerName}
+            Gym Class: {gymClass.gymClassName}, Date: {gymClass.date}, Time:
+            {gymClass.time}
+            {gymClass.date},Trainer: {gymClass.trainerName}
           </li>
         ))}
       </ul>

@@ -1,10 +1,5 @@
 import { User } from '../types/userType';
 
-// export interface User {
-//   username: string;
-//   isAdmin: boolean;
-// }
-
 const users: User[] = [
   {
     username: 'admin',

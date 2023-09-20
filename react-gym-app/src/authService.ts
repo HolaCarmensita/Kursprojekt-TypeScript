@@ -1,20 +1,11 @@
-interface User {
-  username: string;
-  isAdmin: boolean;
-  bookedGymClasses: {
-    gymClassName: string;
-    date: string; // Eller HTMLDate??? Får se när jag på något sätt skapar bokningsystemet
-  }[];
-}
+import users from './data/usersData';
+import { User } from './types/userType'; // Import the User type from userType.ts
 
-const users: User[] = [
-  { username: 'admin', isAdmin: true, bookedGymClasses: [] },
-  { username: 'user', isAdmin: false, bookedGymClasses: [] },
-];
+const allUsers: User[] = users;
 
 export function login(username: string, password: string): User | null {
   // Simulate user authentication (kan ersättas med AUTH-token etc)
-  const user = users.find((user) => user.username === username);
+  const user = allUsers.find((user) => user.username === username);
   if (user) {
     // Skippar lösenord har inte tid
     return user;

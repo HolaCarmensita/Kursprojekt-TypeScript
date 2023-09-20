@@ -35,7 +35,7 @@ const AdminView: React.FC = () => {
   return (
     <div>
       <h1>Welcome, Admin!</h1>
-      <UserList users={users} />
+      <UserList users={users} gymClasses={gymClasses} />
 
       <h2>Add New User</h2>
       <div>

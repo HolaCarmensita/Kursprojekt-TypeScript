@@ -5,25 +5,27 @@ import { GymClass } from '../types/gymClassType';
 import GymClassList from './GymClassList';
 import gymClassData from '../data/gymClassData';
 import GymClassForm from './gymClassForm';
+import { User } from '../types/userType';
 
 // import gymClassData from '../data/gymClassData';
 
-interface User {
-  username: string;
-  isAdmin: boolean;
-}
+// interface User {
+//   username: string;
+//   isAdmin: boolean;
+// }
 
 const AdminView: React.FC = () => {
   const [newUser, setNewUser] = useState<User>({
     username: '',
     isAdmin: false,
+    bookedGymClassIds: [],
   });
   const [users, setUsers] = useState<User[]>(usersData);
   const [gymClasses, setGymClasses] = useState<GymClass[]>(gymClassData);
 
   const handleAddUser = () => {
     setUsers((prevUsers) => [...prevUsers, newUser]);
-    setNewUser({ username: '', isAdmin: false });
+    setNewUser({ username: '', isAdmin: false, bookedGymClassIds: [] });
   };
 
   const handleAddGymClass = (newGymClass: GymClass) => {

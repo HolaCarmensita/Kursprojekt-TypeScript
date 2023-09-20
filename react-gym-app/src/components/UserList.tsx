@@ -1,13 +1,14 @@
 import React from 'react';
+import { User } from '../types/userType';
 
-interface User {
-  username: string;
-  isAdmin: boolean;
-  //   bookedGymClasses: {
-  //     gymClassName: string;
-  //     date: string; // You can choose the appropriate date format here
-  //   }[];
-}
+// interface User {
+//   username: string;
+//   isAdmin: boolean;
+//   //   bookedGymClasses: {
+//   //     gymClassName: string;
+//   //     date: string; // You can choose the appropriate date format here
+//   //   }[];
+// }
 
 interface UserListProps {
   users: User[];

@@ -35,8 +35,13 @@ const AdminView: React.FC = () => {
   return (
     <div>
       <h1>Welcome, Admin!</h1>
+
+      {/* show usreList component */}
       <UserList users={users} gymClasses={gymClasses} />
 
+      {/* Adding new user 
+    OBS! Vill kunna lägga till gymClasses when adding a new user, men ej prio
+    OBS! Bör göra denna till en egen komponent men ej prio, den ska ändå bara finnas här i admin */}
       <h2>Add New User</h2>
       <div>
         <label>
@@ -64,10 +69,10 @@ const AdminView: React.FC = () => {
       </div>
       <button onClick={handleAddUser}>Add User</button>
 
-      {/* Display the GymClassForm component for adding gym classes */}
+      {/* Adding gym classes component */}
       <GymClassForm onAddGymClass={handleAddGymClass} />
 
-      {/* Display the GymClassList component */}
+      {/* show GymClassList component */}
       <GymClassList gymClasses={gymClasses} />
     </div>
   );

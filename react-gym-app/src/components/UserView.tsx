@@ -4,7 +4,8 @@ const UserView: React.FC = () => {
   return (
     <div>
       <h1>Welcome, User!</h1>
-      {/* Add user-specific content here */}
+      {/* Add available gym classes */}
+      {/* Booked or not toggler next to every gym class */}
     </div>
   );
 };

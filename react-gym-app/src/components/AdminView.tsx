@@ -29,7 +29,7 @@ const AdminView: React.FC = () => {
     <div>
       <h1>Welcome, Admin!</h1>
 
-      {/* show usreList component */}
+      {/* show userrList component */}
       <UserList users={users} gymClasses={gymClasses} />
 
       {/* Adding new user 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { User } from '../types/userType';
-import BookingComponent from './BookingComponent'; // Import the BookingComponent
+import BookingComponent from './BookingComponent';
 import { GymClass } from '../types/gymClassType';
 
 type UserViewProps = {
@@ -17,7 +17,7 @@ const UserView: React.FC<UserViewProps> = ({ user, gymClasses }) => {
   const handleBookGymClass = (gymClassId: number) => {
     // Check if the gym class is not already booked
     if (!bookedGymClassIds.includes(gymClassId)) {
-      // Add the gym class ID to the user's bookedGymClassIds
+      // Om det är ok, addera the gym class ID to the user's bookedGymClassIds!
       setBookedGymClassIds([...bookedGymClassIds, gymClassId]);
     }
   };
@@ -25,7 +25,6 @@ const UserView: React.FC<UserViewProps> = ({ user, gymClasses }) => {
   return (
     <div>
       <h1>Welcome, {user.username}!</h1>
-      {/* Display the BookingComponent */}
       <BookingComponent
         gymClasses={gymClasses}
         onBookGymClass={handleBookGymClass}
@@ -48,7 +47,7 @@ const UserView: React.FC<UserViewProps> = ({ user, gymClasses }) => {
             );
           }
 
-          return null; // Gym class not found (handle this case as needed)
+          return null; // Om inget hittar returnas inget, null
         })}
       </ul>
     </div>

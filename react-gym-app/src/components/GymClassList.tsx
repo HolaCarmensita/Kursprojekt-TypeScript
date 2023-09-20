@@ -21,7 +21,7 @@ const GymClassList: React.FC<GymClassListProps> = ({ gymClasses }) => {
           <li key={index}>
             Gym Class: {gymClass.gymClassName}, Date: {gymClass.date}, Time:
             {gymClass.time}
-            {gymClass.date},Trainer: {gymClass.trainerName}
+            {gymClass.date},Trainer: {gymClass.trainerName}, id: {gymClass.id}
           </li>
         ))}
       </ul>

@@ -14,6 +14,7 @@ interface GymClassFormProps {
 
 const GymClassForm: React.FC<GymClassFormProps> = ({ onAddGymClass }) => {
   const [newGymClass, setNewGymClass] = useState<GymClass>({
+    id: 3, //börjar med ett och ska växa 3 då vi har två redan existerade från början
     gymClassName: '',
     date: '',
     time: '',
@@ -28,7 +29,14 @@ const GymClassForm: React.FC<GymClassFormProps> = ({ onAddGymClass }) => {
       newGymClass.trainerName
     ) {
       onAddGymClass(newGymClass);
+      setNewGymClass((prevGymClass) => ({
+        ...prevGymClass,
+        id: prevGymClass.id + 1, // för den nya gymklassen
+      }));
+
+      //reset inputfields men behåller + 1 på id för att hålla rätt ökning
       setNewGymClass({
+        id: newGymClass.id + 1, // igen???
         gymClassName: '',
         date: '',
         time: '',

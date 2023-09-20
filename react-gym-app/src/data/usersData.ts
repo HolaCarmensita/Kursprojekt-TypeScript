@@ -9,7 +9,7 @@ const users: User[] = [
   {
     username: 'user',
     isAdmin: false,
-    bookedGymClassIds: [2],
+    bookedGymClassIds: [1, 2, 3],
   },
 ];
 

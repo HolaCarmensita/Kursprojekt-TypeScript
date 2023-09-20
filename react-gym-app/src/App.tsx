@@ -12,6 +12,7 @@ const App: React.FC = () => {
   const [user, setUser] = useState<{
     username: string;
     isAdmin: boolean;
+    bookedGymClassIds: number[];
   } | null>(null);
 
   const handleLogin = () => {
@@ -28,7 +29,7 @@ const App: React.FC = () => {
         user.isAdmin ? (
           <AdminView />
         ) : (
-          <UserView />
+          <UserView user={user} />
         )
       ) : (
         <>

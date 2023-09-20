@@ -1,10 +1,9 @@
-// src/App.tsx
-
 import React, { useState } from 'react';
 import './App.css';
 import AdminView from './components/AdminView';
 import UserView from './components/UserView';
 import { login } from './authService';
+import gymClasses from './data/gymClassData';
 
 const App: React.FC = () => {
   const [username, setUsername] = useState<string>('');
@@ -29,7 +28,7 @@ const App: React.FC = () => {
         user.isAdmin ? (
           <AdminView />
         ) : (
-          <UserView user={user} />
+          <UserView user={user} gymClasses={gymClasses} />
         )
       ) : (
         <>

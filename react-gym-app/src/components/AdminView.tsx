@@ -7,13 +7,6 @@ import gymClassData from '../data/gymClassData';
 import GymClassForm from './gymClassForm';
 import { User } from '../types/userType';
 
-// import gymClassData from '../data/gymClassData';
-
-// interface User {
-//   username: string;
-//   isAdmin: boolean;
-// }
-
 const AdminView: React.FC = () => {
   const [newUser, setNewUser] = useState<User>({
     username: '',

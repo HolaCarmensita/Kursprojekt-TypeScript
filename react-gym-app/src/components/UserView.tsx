@@ -1,45 +1,54 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { User } from '../types/userType';
-import gymClasses from '../data/gymClassData';
+import BookingComponent from './BookingComponent'; // Import the BookingComponent
+import { GymClass } from '../types/gymClassType';
 
-interface UserViewProps {
-  user: User;
-}
+type UserViewProps = {
+  user: User; // User object with bookedGymClassIds
+  gymClasses: GymClass[]; // List of available gym classes
+};
 
-const UserView: React.FC<UserViewProps> = ({ user }) => {
-  // hämtar gym klass om det finns en id matchning i användaren, funkar!
-  const getGymClassInfo = (gymClassId: number) => {
-    return gymClasses.find((gymClass) => gymClass.id === gymClassId);
+const UserView: React.FC<UserViewProps> = ({ user, gymClasses }) => {
+  const [bookedGymClassIds, setBookedGymClassIds] = useState<number[]>(
+    user.bookedGymClassIds
+  );
+
+  // Function to handle booking a gym class
+  const handleBookGymClass = (gymClassId: number) => {
+    // Check if the gym class is not already booked
+    if (!bookedGymClassIds.includes(gymClassId)) {
+      // Add the gym class ID to the user's bookedGymClassIds
+      setBookedGymClassIds([...bookedGymClassIds, gymClassId]);
+    }
   };
 
   return (
     <div>
-      {/* render available gym classes */}
-      {/* Booked or not toggler next to every gym class */}
-      {/* Toggler should be "disabled/activated" on gym class depending on the logged in users bookedGymClassIds */}
-
       <h1>Welcome, {user.username}!</h1>
-      <h2>Booked Gym Classes:</h2>
+      {/* Display the BookingComponent */}
+      <BookingComponent
+        gymClasses={gymClasses}
+        onBookGymClass={handleBookGymClass}
+      />
+      <h2>Booked Gym Classes</h2>
       <ul>
-        {user.bookedGymClassIds.map((gymClassId, index) => {
-          const gymClass = getGymClassInfo(gymClassId);
-          if (gymClass) {
+        {bookedGymClassIds.map((gymClassId) => {
+          // Find the gym class in the gymClasses array that matches the bookedGymClassId
+          const bookedGymClass = gymClasses.find(
+            (gymClass) => gymClass.id === gymClassId
+          );
+
+          if (bookedGymClass) {
             return (
-              <li key={index}>
-                <div>
-                  {gymClass.gymClassName}: Date: {gymClass.date}
-                  Time: {gymClass.time}
-                </div>
-              </li>
-            );
-          } else {
-            return (
-              <li key={index}>
-                We did not find any booked gym classes with the Gym Class ID:
-                {gymClassId}
+              <li key={gymClassId}>
+                Gym Class Name: {bookedGymClass.gymClassName}
+                Date: {bookedGymClass.date}
+                Time: {bookedGymClass.time}
               </li>
             );
           }
+
+          return null; // Gym class not found (handle this case as needed)
         })}
       </ul>
     </div>

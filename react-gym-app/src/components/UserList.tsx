@@ -1,6 +1,6 @@
 import React from 'react';
-import { GymClass } from '../types/gymClassType';
-import { User } from '../types/userType';
+import GymClass  from '../types/GymClass';
+import User  from '../types/User';
 
 interface UserListProps {
   users: User[];

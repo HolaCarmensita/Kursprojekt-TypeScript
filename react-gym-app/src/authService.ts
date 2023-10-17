@@ -1,5 +1,5 @@
 import users from './data/usersData';
-import { User } from './types/userType'; // Import the User type from userType.ts
+import User from './types/User'; // Import the User type from userType.ts
 
 const allUsers: User[] = users;
 

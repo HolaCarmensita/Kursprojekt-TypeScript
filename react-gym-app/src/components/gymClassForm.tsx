@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GymClass } from '../types/gymClassType';
+import GymClass  from '../types/GymClass';
 
 interface GymClassFormProps {
   onAddGymClass: (newGymClass: GymClass) => void;

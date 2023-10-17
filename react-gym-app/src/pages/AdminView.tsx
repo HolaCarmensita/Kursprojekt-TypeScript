@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import UserList from '../components/UserList';
 import usersData from '../data/usersData';
-import { GymClass } from '../types/gymClassType';
+import GymClass from '../types/GymClass';
 import GymClassList from '../components/GymClassList';
 import gymClassData from '../data/gymClassData';
 import GymClassForm from '../components/gymClassForm';
-import { User } from '../types/userType';
+import User from '../types/User';
 
 const AdminView: React.FC = () => {
   const [newUser, setNewUser] = useState<User>({

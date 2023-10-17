@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { User } from '../types/userType';
+import User from '../types/User';
 import BookingComponent from '../components/BookingComponent';
-import { GymClass } from '../types/gymClassType';
+import GymClass from '../types/GymClass';
 
 type UserViewProps = {
   user: User; // User object with bookedGymClassIds

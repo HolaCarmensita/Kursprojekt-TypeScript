@@ -4,16 +4,13 @@ import AdminView from './pages/AdminView';
 import UserView from './pages/UserView';
 import { login } from './authService';
 import gymClasses from './data/gymClassData';
+import User from './types/User';
 
 const App: React.FC = () => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  
-  const [user, setUser] = useState<{
-    username: string;
-    isAdmin: boolean;
-    bookedGymClassIds: number[];
-  } | null>(null);
+
+  const [user, setUser] = useState<User>();
 
   const handleLogin = () => {
     const loggedInUser = login(username, password);

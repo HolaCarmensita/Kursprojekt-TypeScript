@@ -3,3 +3,6 @@ export type User = {
   isAdmin: boolean;
   bookedGymClassIds: number[];
 };
+
+export default User;
+

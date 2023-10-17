@@ -1,5 +1,5 @@
 import React from 'react';
-import { GymClass } from '../types/gymClassType';
+import GymClass  from '../types/GymClass';
 
 interface GymClassListProps {
   gymClasses: GymClass[];

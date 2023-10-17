@@ -1,5 +1,4 @@
-import { GymClass } from '../types/gymClassType';
-
+import GymClass  from '../types/GymClass';
 // export interface GymClass {
 //   gymClassName: string;
 //   date: string;

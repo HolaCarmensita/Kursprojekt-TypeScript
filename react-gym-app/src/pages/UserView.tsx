@@ -9,15 +9,15 @@ type UserViewProps = {
 };
 
 const UserView: React.FC<UserViewProps> = ({ user, gymClasses }) => {
+
   const [bookedGymClassIds, setBookedGymClassIds] = useState<number[]>(
     user.bookedGymClassIds
   );
 
-  // Function to handle booking a gym class
   const handleBookGymClass = (gymClassId: number) => {
     // Check if the gym class is not already booked
     if (!bookedGymClassIds.includes(gymClassId)) {
-      // Om det är ok, addera the gym class ID to the user's bookedGymClassIds!
+      // Om det är ok, addera the gym class ID to the user's bookedGymClassIds! OBS! för framtiden, boolean button would be nice, true/false = booked/unbooked.
       setBookedGymClassIds([...bookedGymClassIds, gymClassId]);
     }
   };

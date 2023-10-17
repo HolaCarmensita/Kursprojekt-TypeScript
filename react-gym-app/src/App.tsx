@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import './App.css';
-import AdminView from './components/AdminView';
-import UserView from './components/UserView';
+import AdminView from './pages/AdminView';
+import UserView from './pages/UserView';
 import { login } from './authService';
 import gymClasses from './data/gymClassData';
 
 const App: React.FC = () => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  
   const [user, setUser] = useState<{
     username: string;
     isAdmin: boolean;
